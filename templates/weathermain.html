@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device- 
+     width">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <form action="/weatherupdate" method="post">
+        <div class="container">
+            <div class="weather-card">
+                <h3> Current Temperature</h3>
+                <input type="text" name="city_name" id="city-input" placeholder="City Name"></input>
+                <input type="text" name="state_code" id="city-input" placeholder="State Code"></input>
+                <input type="text" name="country_code" id="city-input" placeholder="Country Code"></input>
+                </br>
+                <button id="city-input-btn" type="submit">Find</button>
+    </form>
+    </br>
+    <div class="grid-container">
+        <div class="grid-item" id="name">{{data.name}}</div>
+        {% if data.name %}
+        <div class="grid-item"><img src="https://openweathermap.org/img/wn/10d@2x.png"></img></div>
+        <div class="grid-item">{{data.description}}</div>
+        <div class="grid-item"> {{data.temp}} C </div>
+        {% endif %}
+
+    
+    </div>
+    </div>
+</body>
+</div>
+
+</html>
